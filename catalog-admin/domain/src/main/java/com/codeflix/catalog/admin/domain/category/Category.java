@@ -5,6 +5,7 @@ import com.codeflix.catalog.admin.domain.base.AggregateRoot;
 import com.codeflix.catalog.admin.domain.validation.ValidationHandler;
 
 import java.time.Instant;
+import java.util.Objects;
 
 public class Category extends AggregateRoot<CategoryID> implements Cloneable {
 
@@ -15,14 +16,14 @@ public class Category extends AggregateRoot<CategoryID> implements Cloneable {
     private Instant updatedAt;
     private Instant deletedAt;
 
-    private Category(final CategoryID anId, final String aName, final String aDescription, final boolean isActive, final Instant aCreatedAt, final Instant aUpdatedAt, final Instant aDeletedAt) {
+    private Category(final CategoryID anId, final String aName, final String aDescription, final boolean isActive, final Instant aCreationDate, final Instant aUpdateDate, final Instant aDeleteDate) {
         super(anId);
         this.name = aName;
         this.description = aDescription;
         this.active = isActive;
-        this.createdAt = aCreatedAt;
-        this.updatedAt = aUpdatedAt;
-        this.deletedAt = aDeletedAt;
+        this.createdAt = Objects.requireNonNull(aCreationDate, "'createdAt' should not be null");
+        this.updatedAt = Objects.requireNonNull(aUpdateDate, "'updatedAt' should not be null");
+        this.deletedAt = aDeleteDate;
     }
 
     public static Category newCategory(final String aName, final String aDescription, final boolean isActive) {
@@ -30,6 +31,18 @@ public class Category extends AggregateRoot<CategoryID> implements Cloneable {
         Instant now = Instant.now();
         final Instant deletedAt = isActive ? null : now;
         return new Category(id, aName, aDescription, isActive, now, now, deletedAt);
+    }
+
+    public static Category with(final CategoryID anId, final String aName, final String aDescription, final boolean isActive, final Instant aCreationDate, final Instant aUpdateDate, final Instant aDeleteDate) {
+        return new Category(
+                anId,
+                aName,
+                aDescription,
+                isActive,
+                aCreationDate,
+                aUpdateDate,
+                aDeleteDate
+        );
     }
 
     @Override
