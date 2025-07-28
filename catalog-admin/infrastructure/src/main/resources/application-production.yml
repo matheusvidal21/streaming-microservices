@@ -1,0 +1,11 @@
+mysql:
+  url: ${MYSQL_URL:localhost:3306}
+  schema: catalog_admin_db
+  username: ${MYSQL_USERNAME:root}
+  password: ${MYSQL_PASSWORD:root}
+
+spring:
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none

@@ -1,0 +1,12 @@
+mysql:
+  url: localhost:3306
+  schema: catalog_admin_db
+  username: root
+  password: 123456
+
+server:
+  undertow:
+    threads:
+      worker: 10
+      io: 2
+
