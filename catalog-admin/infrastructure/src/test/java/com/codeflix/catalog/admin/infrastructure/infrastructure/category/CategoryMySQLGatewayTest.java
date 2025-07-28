@@ -1,10 +1,11 @@
-package com.codeflix.catalog.admin.infrastructure.category;
+package com.codeflix.catalog.admin.infrastructure.infrastructure.category;
 
 
 import com.codeflix.catalog.admin.domain.category.Category;
 import com.codeflix.catalog.admin.domain.category.CategoryID;
 import com.codeflix.catalog.admin.domain.category.CategorySearchQuery;
 import com.codeflix.catalog.admin.infrastructure.MySQLGatewayTest;
+import com.codeflix.catalog.admin.infrastructure.category.CategoryMySQLGateway;
 import com.codeflix.catalog.admin.infrastructure.category.persistence.CategoryJpaEntity;
 import com.codeflix.catalog.admin.infrastructure.category.persistence.CategoryRepository;
 import org.junit.jupiter.api.Assertions;
