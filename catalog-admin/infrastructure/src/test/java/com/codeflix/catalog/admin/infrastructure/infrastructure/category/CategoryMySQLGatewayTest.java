@@ -11,10 +11,12 @@ import com.codeflix.catalog.admin.infrastructure.category.persistence.CategoryRe
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Import;
 
 import java.util.List;
 
 @MySQLGatewayTest
+@Import(CategoryMySQLGateway.class)
 public class CategoryMySQLGatewayTest {
 
     @Autowired

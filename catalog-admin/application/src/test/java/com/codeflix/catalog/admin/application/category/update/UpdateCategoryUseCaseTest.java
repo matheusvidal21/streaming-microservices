@@ -57,7 +57,7 @@ public class UpdateCategoryUseCaseTest {
         final var actualOutput = useCase.execute(aCommand).get();
 
         Assertions.assertNotNull(actualOutput);
-        Assertions.assertEquals(expectedId, actualOutput.id());
+        Assertions.assertEquals(expectedId.getValue(), actualOutput.id());
 
         Mockito.verify(categoryGateway, Mockito.times(1)).findById(Mockito.eq(expectedId));
         Mockito.verify(categoryGateway, Mockito.times(1)).update(Mockito.argThat(
@@ -130,7 +130,7 @@ public class UpdateCategoryUseCaseTest {
         final var actualOutput = useCase.execute(aCommand).get();
 
         Assertions.assertNotNull(actualOutput);
-        Assertions.assertEquals(expectedId, actualOutput.id());
+        Assertions.assertEquals(expectedId.getValue(), actualOutput.id());
 
         Mockito.verify(categoryGateway, Mockito.times(1)).findById(Mockito.eq(expectedId));
         Mockito.verify(categoryGateway, Mockito.times(1)).update(Mockito.argThat(
@@ -146,7 +146,7 @@ public class UpdateCategoryUseCaseTest {
     }
 
     @Test
-    public void givenAValidCommand_whenGatewayThrowsRandomException_thenShouldReturnAException() {
+    public void givenAValidCommand_whenGatewayThrowsException_thenShouldReturnAException() {
         final var aCategory = Category.newCategory("Film", null, true);
 
         final var expectedId = aCategory.getId();
@@ -193,7 +193,6 @@ public class UpdateCategoryUseCaseTest {
         final var expectedDescription = "A categoria mais assistida";
         final var expectedIsActive = true;
         final var expectedErrorMessage = "Category with ID 123 was not found";
-        final  var expectedErrorCount = 1;
 
         final var aCommand = UpdateCategoryCommand.with(
                 expectedId,
@@ -207,8 +206,7 @@ public class UpdateCategoryUseCaseTest {
 
         final var actualException = Assertions.assertThrows(DomainException.class, () -> useCase.execute(aCommand));
 
-        Assertions.assertEquals(expectedErrorMessage, actualException.getErrors().get(0).message());
-        Assertions.assertEquals(expectedErrorCount, actualException.getErrors().size());
+        Assertions.assertEquals(expectedErrorMessage, actualException.getMessage());
 
         Mockito.verify(categoryGateway, Mockito.times(1)).findById(Mockito.eq(CategoryID.from(expectedId)));
         Mockito.verify(categoryGateway, Mockito.times(0)).update(Mockito.any());
