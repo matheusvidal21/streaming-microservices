@@ -3,7 +3,7 @@ package com.codeflix.catalog.admin.infrastructure.application.category.retrieve.
 import com.codeflix.catalog.admin.application.category.retrieve.list.ListCategoriesUseCase;
 import com.codeflix.catalog.admin.domain.category.Category;
 import com.codeflix.catalog.admin.domain.category.CategoryGateway;
-import com.codeflix.catalog.admin.domain.category.CategorySearchQuery;
+import com.codeflix.catalog.admin.domain.pagination.SearchQuery;
 import com.codeflix.catalog.admin.infrastructure.IntegrationTest;
 import com.codeflix.catalog.admin.infrastructure.category.persistence.CategoryJpaEntity;
 import com.codeflix.catalog.admin.infrastructure.category.persistence.CategoryRepository;
@@ -93,7 +93,7 @@ public class ListCategoriesUseCaseIT {
         final var expectedTotal = 0;
         final var expectedItemsCount = 0;
 
-        final var aQuery = new CategorySearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
+        final var aQuery = new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
 
         final var actualResult = useCase.execute(aQuery);
 
@@ -123,7 +123,7 @@ public class ListCategoriesUseCaseIT {
         final var expectedSort = "name";
         final var expectedDirection = "asc";
 
-        final var aQuery = new CategorySearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
+        final var aQuery = new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
 
         final var actualResult = useCase.execute(aQuery);
 
@@ -153,7 +153,7 @@ public class ListCategoriesUseCaseIT {
     ) {
         final var expectedTerms = "";
 
-        final var aQuery = new CategorySearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
+        final var aQuery = new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
 
         final var actualResult = useCase.execute(aQuery);
 
@@ -183,7 +183,7 @@ public class ListCategoriesUseCaseIT {
         final var expectedDirection = "asc";
         final var expectedCategoriesNameArray = Arrays.asList(expectedCategoriesName.split(";"));
 
-        final var aQuery = new CategorySearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
+        final var aQuery = new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
 
         final var actualResult = useCase.execute(aQuery);
 

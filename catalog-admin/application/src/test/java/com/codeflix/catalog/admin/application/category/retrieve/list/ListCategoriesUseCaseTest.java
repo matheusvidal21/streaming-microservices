@@ -2,7 +2,7 @@ package com.codeflix.catalog.admin.application.category.retrieve.list;
 
 import com.codeflix.catalog.admin.domain.category.Category;
 import com.codeflix.catalog.admin.domain.category.CategoryGateway;
-import com.codeflix.catalog.admin.domain.category.CategorySearchQuery;
+import com.codeflix.catalog.admin.domain.pagination.SearchQuery;
 import com.codeflix.catalog.admin.domain.pagination.Pagination;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -43,7 +43,7 @@ public class ListCategoriesUseCaseTest {
         final var expectedDirection = "asc";
         final var expectedItemsCount = 2;
 
-        final var aQuery = new CategorySearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
+        final var aQuery = new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
 
         final var expectedPagination = new Pagination<>(expectedPage, expectedPerPage, expectedCategories.size(), expectedCategories);
 
@@ -72,7 +72,7 @@ public class ListCategoriesUseCaseTest {
         final var expectedDirection = "asc";
         final var expectedItemsCount = 0;
 
-        final var aQuery = new CategorySearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
+        final var aQuery = new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
 
         final var expectedPagination = new Pagination<>(expectedPage, expectedPerPage, expectedCategories.size(), expectedCategories);
 
@@ -100,7 +100,7 @@ public class ListCategoriesUseCaseTest {
         final var expectedItemsCount = 0;
         final var expectedErrorMessage = "Gateway error";
 
-        final var aQuery = new CategorySearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
+        final var aQuery = new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
 
         Mockito.when(categoryGateway.findAll(Mockito.eq(aQuery)))
                 .thenThrow(new IllegalStateException(expectedErrorMessage));

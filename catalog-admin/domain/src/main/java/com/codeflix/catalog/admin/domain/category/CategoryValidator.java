@@ -11,7 +11,7 @@ public class CategoryValidator extends Validator {
     public static final int NAME_MIN_LENGTH = 3;
     public static final int NAME_MAX_LENGTH = 255;
 
-    public CategoryValidator(final Category aCategory, final ValidationHandler aHandler) {
+    protected CategoryValidator(final Category aCategory, final ValidationHandler aHandler) {
         super(aHandler);
         this.category = aCategory;
     }
@@ -30,6 +30,7 @@ public class CategoryValidator extends Validator {
         }
         if (name.isBlank()) {
             this.validationHandler().append(new Error("'name' should not be empty"));
+            return;
         }
         final int length = name.trim().length();
         if (length > NAME_MAX_LENGTH || length < NAME_MIN_LENGTH) {

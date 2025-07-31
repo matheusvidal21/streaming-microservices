@@ -27,7 +27,7 @@ public class GlobalExceptionHandler {
                 .body(ApiError.from(ex));
     }
 
-    record ApiError(
+    public record ApiError(
             String message,
             List<Error> errors
     ) {

@@ -3,7 +3,7 @@ package com.codeflix.catalog.admin.infrastructure.category;
 import com.codeflix.catalog.admin.domain.category.Category;
 import com.codeflix.catalog.admin.domain.category.CategoryGateway;
 import com.codeflix.catalog.admin.domain.category.CategoryID;
-import com.codeflix.catalog.admin.domain.category.CategorySearchQuery;
+import com.codeflix.catalog.admin.domain.pagination.SearchQuery;
 import com.codeflix.catalog.admin.domain.pagination.Pagination;
 import com.codeflix.catalog.admin.infrastructure.category.persistence.CategoryJpaEntity;
 import com.codeflix.catalog.admin.infrastructure.category.persistence.CategoryRepository;
@@ -46,7 +46,7 @@ public class CategoryMySQLGateway implements CategoryGateway {
     }
 
     @Override
-    public Pagination<Category> findAll(final CategorySearchQuery aQuery) {
+    public Pagination<Category> findAll(final SearchQuery aQuery) {
         final var pageable = PageRequest.of(aQuery.page(), aQuery.perPage(), Sort.by(Sort.Direction.fromString(aQuery.direction()), aQuery.sort()));
 
         final var specifications = Optional.ofNullable(aQuery.terms())
