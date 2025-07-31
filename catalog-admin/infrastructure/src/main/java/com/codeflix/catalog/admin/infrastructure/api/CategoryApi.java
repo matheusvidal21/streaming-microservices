@@ -30,7 +30,7 @@ public interface CategoryApi {
     })
     ResponseEntity<?> createCategory(@RequestBody CreateCategoryRequest anInput);
 
-    @GetMapping
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "List all categories paginated")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Categories retrieved successfully"),
@@ -47,7 +47,6 @@ public interface CategoryApi {
 
     @GetMapping(
             value = "/{id}",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Operation(summary = "Get a category by it's identifier")
@@ -71,11 +70,7 @@ public interface CategoryApi {
     })
     ResponseEntity<?> updateById(@PathVariable("id") String anId, @RequestBody UpdateCategoryRequest anInput);
 
-    @DeleteMapping(
-            value = "/{id}",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE
-    )
+    @DeleteMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @Operation(summary = "Delete a category by it's identifier")
     @ApiResponses(value = {
