@@ -9,9 +9,9 @@ public record CreateCategoryCommand(
     public static CreateCategoryCommand with(
             final String name,
             final String description,
-            final boolean isActive
+            final Boolean isActive
     ) {
-        return new CreateCategoryCommand(name, description, isActive);
+        return new CreateCategoryCommand(name, description, isActive != null ? isActive : true);
     }
 
 }

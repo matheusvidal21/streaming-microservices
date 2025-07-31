@@ -3,8 +3,8 @@ package com.codeflix.catalog.admin.infrastructure.category;
 import com.codeflix.catalog.admin.domain.category.Category;
 import com.codeflix.catalog.admin.domain.category.CategoryGateway;
 import com.codeflix.catalog.admin.domain.category.CategoryID;
-import com.codeflix.catalog.admin.domain.pagination.SearchQuery;
 import com.codeflix.catalog.admin.domain.pagination.Pagination;
+import com.codeflix.catalog.admin.domain.pagination.SearchQuery;
 import com.codeflix.catalog.admin.infrastructure.category.persistence.CategoryJpaEntity;
 import com.codeflix.catalog.admin.infrastructure.category.persistence.CategoryRepository;
 import com.codeflix.catalog.admin.infrastructure.utils.SpecificationUtils;
@@ -13,6 +13,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -28,21 +30,6 @@ public class CategoryMySQLGateway implements CategoryGateway {
     public Optional<Category> findById(CategoryID anId) {
         return this.categoryRepository.findById(anId.getValue())
                 .map(CategoryJpaEntity::toAggregate);
-    }
-
-    @Override
-    public Category create(final Category aCategory) {
-        return save(aCategory);
-    }
-
-    @Override
-    public Category update(final Category aCategory) {
-        return save(aCategory);
-    }
-
-    @Override
-    public void deleteById(final CategoryID anId) {
-        this.categoryRepository.deleteById(anId.getValue());
     }
 
     @Override
@@ -66,6 +53,26 @@ public class CategoryMySQLGateway implements CategoryGateway {
                 pageResult.getTotalElements(),
                 pageResult.map(CategoryJpaEntity::toAggregate).toList()
         );
+    }
+
+    @Override
+    public Category create(final Category aCategory) {
+        return save(aCategory);
+    }
+
+    @Override
+    public Category update(final Category aCategory) {
+        return save(aCategory);
+    }
+
+    @Override
+    public void deleteById(final CategoryID anId) {
+        this.categoryRepository.deleteById(anId.getValue());
+    }
+
+    @Override
+    public List<CategoryID> existsByIds(final Iterable<CategoryID> ids) {
+        return Collections.emptyList();
     }
 
     private Category save(final Category aCategory) {

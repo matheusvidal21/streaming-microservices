@@ -59,7 +59,7 @@ public class CategoryController implements CategoryApi {
         final var aCommand = CreateCategoryCommand.with(
                 anInput.name(),
                 anInput.description(),
-                anInput.active() != null ? anInput.active() : true
+                anInput.active()
         );
 
         final Function<Notification, ResponseEntity<?>> anError = notification ->
