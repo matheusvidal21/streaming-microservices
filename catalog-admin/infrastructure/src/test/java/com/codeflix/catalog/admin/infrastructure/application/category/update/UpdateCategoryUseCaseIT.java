@@ -53,7 +53,7 @@ public class UpdateCategoryUseCaseIT {
         Assertions.assertEquals(1, categoryRepository.count());
 
         Assertions.assertNotNull(actualOutput);
-        Assertions.assertEquals(expectedId, actualOutput.id());
+        Assertions.assertEquals(expectedId.getValue(), actualOutput.id());
 
         final var actualCategory = categoryRepository.findById(actualOutput.id()).get();
 
@@ -120,7 +120,7 @@ public class UpdateCategoryUseCaseIT {
         final var actualOutput = useCase.execute(aCommand).get();
 
         Assertions.assertNotNull(actualOutput);
-        Assertions.assertEquals(expectedId, actualOutput.id());
+        Assertions.assertEquals(expectedId.getValue(), actualOutput.id());
 
         final var actualCategory = categoryRepository.findById(actualOutput.id()).get();
 

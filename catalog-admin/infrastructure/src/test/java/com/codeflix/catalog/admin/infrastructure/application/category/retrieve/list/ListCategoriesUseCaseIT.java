@@ -139,7 +139,7 @@ public class ListCategoriesUseCaseIT {
             "name,asc,0,10,7,7,Animes",
             "name,desc,0,10,7,7,Séries",
             "createdAt,asc,0,10,7,7,Filmes",
-            "createdAt,desc,0,10,7,7,Novelas",
+            "createdAt,desc,0,10,7,7,Esportes",
             "description,asc,0,10,7,7,Filmes",
     })
     public void givenAValidSortAndDirection_whenCallsListCategories_thenShouldReturnCategoriesSorted(

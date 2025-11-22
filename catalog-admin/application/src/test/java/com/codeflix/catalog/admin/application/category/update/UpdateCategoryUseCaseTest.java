@@ -1,25 +1,23 @@
 package com.codeflix.catalog.admin.application.category.update;
 
+import com.codeflix.catalog.admin.application.UseCaseTest;
 import com.codeflix.catalog.admin.domain.category.Category;
 import com.codeflix.catalog.admin.domain.category.CategoryGateway;
 import com.codeflix.catalog.admin.domain.category.CategoryID;
 import com.codeflix.catalog.admin.domain.exceptions.DomainException;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
 import static org.mockito.AdditionalAnswers.returnsFirstArg;
 
-@ExtendWith(MockitoExtension.class)
-public class UpdateCategoryUseCaseTest {
+public class UpdateCategoryUseCaseTest extends UseCaseTest {
 
     @InjectMocks
     private DefaultUpdateCategoryUseCase useCase;
@@ -27,9 +25,9 @@ public class UpdateCategoryUseCaseTest {
     @Mock
     private CategoryGateway categoryGateway;
 
-    @BeforeEach
-    void cleanUp() {
-        Mockito.reset(categoryGateway);
+    @Override
+    protected List<Object> getMocks() {
+        return List.of(categoryGateway);
     }
 
     @Test

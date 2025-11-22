@@ -383,4 +383,82 @@ public class GenreTest {
         Assertions.assertNull(actualGenre.getDeletedAt());
     }
 
+    @Test
+    public void givenAValidEmptyCategoriesGenre_whenCallAddCategories_thenShouldReceiveOK() throws InterruptedException {
+        final var seriesId = CategoryID.from("123");
+        final var moviesId = CategoryID.from("456");
+
+        final var expectedName = "Ação";
+        final var expectedIsActive = true;
+        final var expectedCategories = List.of(seriesId, moviesId);
+
+        final var actualGenre = Genre.newGenre(expectedName, expectedIsActive);
+
+        Assertions.assertEquals(0, actualGenre.getCategories().size());
+
+        final var actualCreatedAt = actualGenre.getCreatedAt();
+        final var oldUpdatedAt = actualGenre.getUpdatedAt();
+
+        actualGenre.addCategories(expectedCategories);
+
+        Assertions.assertNotNull(actualGenre.getId());
+        Assertions.assertEquals(expectedName, actualGenre.getName());
+        Assertions.assertEquals(expectedIsActive, actualGenre.isActive());
+        Assertions.assertEquals(2, actualGenre.getCategories().size());
+        Assertions.assertEquals(expectedCategories, actualGenre.getCategories());
+        Assertions.assertEquals(actualCreatedAt, actualGenre.getCreatedAt());
+        Assertions.assertTrue(oldUpdatedAt.isBefore(actualGenre.getUpdatedAt()));
+        Assertions.assertNull(actualGenre.getDeletedAt());
+    }
+
+    @Test
+    public void givenAValidEmptyCategoriesGenre_whenCallAddCategoriesWithEmptyList_thenShouldReceiveOK() throws InterruptedException {
+        final var expectedName = "Ação";
+        final var expectedIsActive = true;
+        final var expectedCategories = new ArrayList<CategoryID>();
+
+        final var actualGenre = Genre.newGenre(expectedName, expectedIsActive);
+
+        Assertions.assertEquals(0, actualGenre.getCategories().size());
+
+        final var actualCreatedAt = actualGenre.getCreatedAt();
+        final var actualUpdateAt = actualGenre.getUpdatedAt();
+
+        actualGenre.addCategories(expectedCategories);
+
+        Assertions.assertNotNull(actualGenre.getId());
+        Assertions.assertEquals(expectedName, actualGenre.getName());
+        Assertions.assertEquals(expectedIsActive, actualGenre.isActive());
+        Assertions.assertEquals(0, actualGenre.getCategories().size());
+        Assertions.assertEquals(expectedCategories, actualGenre.getCategories());
+        Assertions.assertEquals(actualCreatedAt, actualGenre.getCreatedAt());
+        Assertions.assertEquals(actualUpdateAt, actualGenre.getUpdatedAt());
+        Assertions.assertNull(actualGenre.getDeletedAt());
+    }
+
+    @Test
+    public void givenAValidEmptyCategoriesGenre_whenCallAddCategoriesWithNullList_thenShouldReceiveOK() throws InterruptedException {
+        final var expectedName = "Ação";
+        final var expectedIsActive = true;
+        final var expectedCategories = new ArrayList<CategoryID>();
+
+        final var actualGenre = Genre.newGenre(expectedName, expectedIsActive);
+
+        Assertions.assertEquals(0, actualGenre.getCategories().size());
+
+        final var actualCreatedAt = actualGenre.getCreatedAt();
+        final var actualUpdateAt = actualGenre.getUpdatedAt();
+
+        actualGenre.addCategories(null);
+
+        Assertions.assertNotNull(actualGenre.getId());
+        Assertions.assertEquals(expectedName, actualGenre.getName());
+        Assertions.assertEquals(expectedIsActive, actualGenre.isActive());
+        Assertions.assertEquals(0, actualGenre.getCategories().size());
+        Assertions.assertEquals(expectedCategories, actualGenre.getCategories());
+        Assertions.assertEquals(actualCreatedAt, actualGenre.getCreatedAt());
+        Assertions.assertEquals(actualUpdateAt, actualGenre.getUpdatedAt());
+        Assertions.assertNull(actualGenre.getDeletedAt());
+    }
+
 }

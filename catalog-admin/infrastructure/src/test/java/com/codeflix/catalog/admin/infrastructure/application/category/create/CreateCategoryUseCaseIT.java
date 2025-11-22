@@ -11,8 +11,6 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.bean.override.mockito.MockitoSpyBean;
 
-import static org.mockito.AdditionalAnswers.returnsFirstArg;
-
 @IntegrationTest
 public class CreateCategoryUseCaseIT {
 
@@ -91,9 +89,6 @@ public class CreateCategoryUseCaseIT {
                 expectedDescription,
                 expectedIsActive
         );
-
-        Mockito.when(categoryGateway.create(Mockito.any()))
-                .thenAnswer(returnsFirstArg());
 
         Assertions.assertEquals(0, categoryRepository.count());
 
