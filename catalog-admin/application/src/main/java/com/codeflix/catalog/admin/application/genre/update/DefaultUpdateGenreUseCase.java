@@ -20,11 +20,11 @@ import java.util.stream.Collectors;
 
 public class DefaultUpdateGenreUseCase extends UpdateGenreUseCase {
 
-    private final CategoryGateway categoryGateway;
-
     private final GenreGateway genreGateway;
 
-    public DefaultUpdateGenreUseCase(final CategoryGateway categoryGateway, final GenreGateway genreGateway) {
+    private final CategoryGateway categoryGateway;
+
+    public DefaultUpdateGenreUseCase(final GenreGateway genreGateway, final CategoryGateway categoryGateway) {
         this.categoryGateway = Objects.requireNonNull(categoryGateway);
         this.genreGateway = Objects.requireNonNull(genreGateway);
     }
