@@ -1,17 +1,17 @@
 package com.codeflix.catalog.admin.infrastructure.genre.presenters;
 
-import com.codeflix.catalog.admin.application.category.retrieve.get.CategoryOutput;
-import com.codeflix.catalog.admin.application.category.retrieve.list.CategoryListOutput;
+import com.codeflix.catalog.admin.application.genre.retrivie.get.GenreOutput;
+import com.codeflix.catalog.admin.application.genre.retrivie.list.GenreListOutput;
 import com.codeflix.catalog.admin.infrastructure.genre.models.GenreListResponse;
 import com.codeflix.catalog.admin.infrastructure.genre.models.GenreResponse;
 
 public interface GenreApiPresenter {
 
-    static GenreResponse present(final CategoryOutput output) {
+    static GenreResponse present(final GenreOutput output) {
         return new GenreResponse(
-                output.id().getValue(),
+                output.id(),
                 output.name(),
-                output.description(),
+                output.categories(),
                 output.active(),
                 output.createdAt(),
                 output.updatedAt(),
@@ -19,11 +19,10 @@ public interface GenreApiPresenter {
         );
     }
 
-    static GenreListResponse present(final CategoryListOutput output) {
+    static GenreListResponse present(final GenreListOutput output) {
         return new GenreListResponse(
-                output.id().getValue(),
+                output.id(),
                 output.name(),
-                output.description(),
                 output.active(),
                 output.createdAt(),
                 output.deletedAt()

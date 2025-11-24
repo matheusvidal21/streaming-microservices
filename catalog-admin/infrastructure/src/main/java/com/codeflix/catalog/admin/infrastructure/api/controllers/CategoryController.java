@@ -55,7 +55,7 @@ public class CategoryController implements CategoryApi {
     }
 
     @Override
-    public ResponseEntity<?> createCategory(final CreateCategoryRequest anInput) {
+    public ResponseEntity<?> create(final CreateCategoryRequest anInput) {
         final var aCommand = CreateCategoryCommand.with(
                 anInput.name(),
                 anInput.description(),
@@ -74,7 +74,7 @@ public class CategoryController implements CategoryApi {
     }
 
     @Override
-    public Pagination<CategoryListResponse> listCategories(final int page, final int perPage, final String search, final String sort, final String direction) {
+    public Pagination<CategoryListResponse> list(final int page, final int perPage, final String search, final String sort, final String direction) {
         return this.listCategoriesUseCase.execute(new SearchQuery(page, perPage, search, sort, direction))
                 .map(CategoryApiPresenter::present);
     }

@@ -5,11 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Instant;
 
 public record GenreListResponse(
-        String id,
-        String name,
-        String description,
+        @JsonProperty("id") String id,
+        @JsonProperty("name") String name,
         @JsonProperty("is_active") Boolean active,
-        Instant createdAt,
-        Instant deletedAt
-        ) {
+        @JsonProperty("created_at") Instant createdAt,
+        @JsonProperty("deleted_at") Instant deletedAt
+) {
 }

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Collections;
 import java.util.List;
 
-public record CreateGenreRequest(
+public record UpdateGenreRequest(
         @JsonProperty("name") String name,
         @JsonProperty("categories_id") List<String> categories,
         @JsonProperty("is_active") Boolean active
