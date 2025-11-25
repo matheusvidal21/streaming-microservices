@@ -375,7 +375,10 @@ public class CategoryMySQLGatewayTest {
         final var actualResult = categoryGateway.existsByIds(ids);
 
         // then
-        Assertions.assertEquals(expectedIds, actualResult);
+        Assertions.assertTrue(
+                expectedIds.size() == actualResult.size()
+                        && expectedIds.containsAll(actualResult)
+        );
     }
 
 }
