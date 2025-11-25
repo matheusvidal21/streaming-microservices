@@ -51,7 +51,7 @@ public class DefaultUpdateGenreUseCase extends UpdateGenreUseCase {
         return UpdateGenreOutput.from(this.genreGateway.update(aGenre));
     }
 
-    private Supplier<DomainException> notFound(final GenreID anId) {
+    private Supplier<NotFoundException> notFound(final GenreID anId) {
         return () -> NotFoundException.with(Genre.class, anId);
     }
 
