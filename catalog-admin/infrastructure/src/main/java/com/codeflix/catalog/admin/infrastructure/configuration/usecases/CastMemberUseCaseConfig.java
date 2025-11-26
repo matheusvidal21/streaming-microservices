@@ -26,27 +26,27 @@ public class CastMemberUseCaseConfig {
     }
 
     @Bean
-    public GetCastMemberByIdUseCase getGenreByIdUseCase() {
+    public GetCastMemberByIdUseCase getCastMemberByIdUseCase() {
         return new DefaultGetCastMemberByIdUseCase(castMemberGateway);
     }
 
     @Bean
-    public ListCastMembersUseCase listGenresUseCase() {
+    public ListCastMembersUseCase listCastMembersUseCase() {
         return new DefaultListCastMembersUseCase(castMemberGateway);
     }
 
     @Bean
-    public CreateCastMemberUseCase createGenreUseCase() {
+    public CreateCastMemberUseCase createCastMemberUseCase() {
         return new DefaultCreateCastMemberUseCase(castMemberGateway);
     }
 
     @Bean
-    public UpdateCastMemberUseCase updateGenreUseCase() {
+    public UpdateCastMemberUseCase updateCastMemberUseCase() {
         return new DefaultUpdateCastMemberUseCase(castMemberGateway);
     }
 
     @Bean
-    public DeleteCastMemberUseCase deleteGenreUseCase() {
+    public DeleteCastMemberUseCase deleteCastMemberUseCase() {
         return new DefaultDeleteCastMemberUseCase(castMemberGateway);
     }
 
