@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 import java.time.Instant;
 
 @Entity(name = "Category")
-@Table(name = "category")
+@Table(name = "categories")
 public class CategoryJpaEntity {
 
     @Id

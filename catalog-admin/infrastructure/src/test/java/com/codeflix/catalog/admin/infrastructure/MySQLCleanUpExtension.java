@@ -1,5 +1,6 @@
 package com.codeflix.catalog.admin.infrastructure;
 
+import com.codeflix.catalog.admin.infrastructure.castmember.persistence.CastMemberRepository;
 import com.codeflix.catalog.admin.infrastructure.category.persistence.CategoryRepository;
 import com.codeflix.catalog.admin.infrastructure.genre.persistence.GenreRepository;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
@@ -16,6 +17,7 @@ public class MySQLCleanUpExtension implements BeforeEachCallback {
     public void beforeEach(ExtensionContext context) {
         final var appContext = SpringExtension.getApplicationContext(context);
         cleanUp(List.of(
+                appContext.getBean(CastMemberRepository.class),
                 appContext.getBean(GenreRepository.class),
                 appContext.getBean(CategoryRepository.class)
         ));

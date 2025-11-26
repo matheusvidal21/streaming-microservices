@@ -1,4 +1,4 @@
-package com.codeflix.catalog.admin.infrastructure.category.persistence;
+package com.codeflix.catalog.admin.infrastructure.castmember.persistence;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,13 +9,11 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface CategoryRepository extends JpaRepository<CategoryJpaEntity, String> {
+public interface CastMemberRepository extends JpaRepository<CastMemberJpaEntity, String> {
 
-    Page<CategoryJpaEntity> findAll(Specification<CategoryJpaEntity> whereClause, Pageable page);
+    Page<CastMemberJpaEntity> findAll(Specification<CastMemberJpaEntity> whereClause, Pageable page);
 
-    @Query(
-            value = "select c.id from Category c where c.id in :ids"
-    )
+    @Query(value = "select c.id from CastMember c where c.id in :ids")
     List<String> existsByIds(@Param("ids") List<String> ids);
 
 }

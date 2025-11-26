@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface GenreRepository extends JpaRepository<GenreJpaEntity, String> {
 
-    Page<GenreJpaEntity> findAll(Specification<GenreJpaEntity> whereClause, Pageable pageable);
+    Page<GenreJpaEntity> findAll(Specification<GenreJpaEntity> whereClause, Pageable page);
 
 }
