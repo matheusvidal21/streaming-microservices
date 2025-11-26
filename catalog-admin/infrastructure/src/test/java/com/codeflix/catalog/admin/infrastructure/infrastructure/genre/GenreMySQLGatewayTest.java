@@ -371,7 +371,7 @@ public class GenreMySQLGatewayTest {
     }
 
     @Test
-    public void givenAInvalidGenreId_whenCallsFindById_thenShouldReturnEmpty() {
+    public void givenAnInvalidGenreId_whenCallsFindById_thenShouldReturnEmpty() {
         // given
         final var expectedId = GenreID.from("123");
 

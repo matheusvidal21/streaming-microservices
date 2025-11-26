@@ -26,7 +26,7 @@ public class CastMemberTest {
     }
 
     @Test
-    public void givenAInvalidNullName_whenCallsNewMember_shouldReceiveANotification() {
+    public void givenAnInvalidNullName_whenCallsNewMember_shouldReceiveANotification() {
         final String expectedName = null;
         final var expectedType = CastMemberType.ACTOR;
         final var expectedErrorCount = 1;
@@ -43,7 +43,7 @@ public class CastMemberTest {
     }
 
     @Test
-    public void givenAInvalidEmptyName_whenCallsNewMember_shouldReceiveANotification() {
+    public void givenAnInvalidEmptyName_whenCallsNewMember_shouldReceiveANotification() {
         final var expectedName = " ";
         final var expectedType = CastMemberType.ACTOR;
         final var expectedErrorCount = 1;
@@ -60,7 +60,7 @@ public class CastMemberTest {
     }
 
     @Test
-    public void givenAInvalidNameWithLengthMoreThan255_whenCallsNewMember_shouldReceiveANotification() {
+    public void givenAnInvalidNameWithLengthMoreThan255_whenCallsNewMember_shouldReceiveANotification() {
         final var expectedName = """
                 Gostaria de enfatizar que o consenso sobre a necessidade de qualificação auxilia a preparação e a
                 composição das posturas dos órgãos dirigentes com relação às suas atribuições.
@@ -82,7 +82,7 @@ public class CastMemberTest {
     }
 
     @Test
-    public void givenAInvalidNullType_whenCallsNewMember_shouldReceiveANotification() {
+    public void givenAnInvalidNullType_whenCallsNewMember_shouldReceiveANotification() {
         final var expectedName = "Vin Diesel";
         final CastMemberType expectedType = null;
         final var expectedErrorCount = 1;

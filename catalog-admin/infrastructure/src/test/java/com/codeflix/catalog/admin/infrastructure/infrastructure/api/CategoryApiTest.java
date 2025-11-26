@@ -101,7 +101,7 @@ public class CategoryApiTest {
     }
 
     @Test
-    public void givenAInvalidName_whenCallsCreateCategory_thenShouldReturnNotification() throws Exception {
+    public void givenAnInvalidName_whenCallsCreateCategory_thenShouldReturnNotification() throws Exception {
         // given
         final String expectedName = null;
         final var expectedDescription = "A categoria mais assistida";
@@ -145,7 +145,7 @@ public class CategoryApiTest {
     }
 
     @Test
-    public void givenAInvalidCommand_whenCallsCreateCategory_thenShouldReturnDomainException() throws Exception {
+    public void givenAnInvalidCommand_whenCallsCreateCategory_thenShouldReturnDomainException() throws Exception {
         // given
         final String expectedName = null;
         final var expectedDescription = "A categoria mais assistida";
@@ -225,7 +225,7 @@ public class CategoryApiTest {
     }
 
     @Test
-    public void givenAInvalidId_whenCallsGetCategoryById_thenShouldReturnNotFoundException() throws Exception {
+    public void givenAnInvalidId_whenCallsGetCategoryById_thenShouldReturnNotFoundException() throws Exception {
         // given
         final var expectedId = CategoryID.from("123");
         final var expectedErrorMessage = "Category with ID 123 was not found";
@@ -330,7 +330,7 @@ public class CategoryApiTest {
     }
 
     @Test
-    public void givenAInvalidName_whenCallsUpdateCategory_thenShouldReturnDomainException() throws Exception {
+    public void givenAnInvalidName_whenCallsUpdateCategory_thenShouldReturnDomainException() throws Exception {
         // given
         final var expectedId = "123";
         final var expectedName = "Filmes";

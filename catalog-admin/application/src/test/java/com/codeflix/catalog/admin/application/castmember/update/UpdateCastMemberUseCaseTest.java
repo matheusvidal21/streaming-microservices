@@ -73,7 +73,7 @@ public class UpdateCastMemberUseCaseTest extends UseCaseTest {
     }
 
     @Test
-    public void givenAInvalidName_whenCallsUpdateCastMember_shouldThrowsNotificationException() {
+    public void givenAnInvalidName_whenCallsUpdateCastMember_shouldThrowsNotificationException() {
         // given
         final var aMember = CastMember.newMember("vin diesel", CastMemberType.DIRECTOR);
 
@@ -109,7 +109,7 @@ public class UpdateCastMemberUseCaseTest extends UseCaseTest {
     }
 
     @Test
-    public void givenAInvalidType_whenCallsUpdateCastMember_shouldThrowsNotificationException() {
+    public void givenAnInvalidType_whenCallsUpdateCastMember_shouldThrowsNotificationException() {
         // given
         final var aMember = CastMember.newMember("vin diesel", CastMemberType.DIRECTOR);
 
@@ -145,7 +145,7 @@ public class UpdateCastMemberUseCaseTest extends UseCaseTest {
     }
 
     @Test
-    public void givenAInvalidId_whenCallsUpdateCastMember_shouldThrowsNotFoundException() {
+    public void givenAnInvalidId_whenCallsUpdateCastMember_shouldThrowsNotFoundException() {
         // given
         final var aMember = CastMember.newMember("vin diesel", CastMemberType.DIRECTOR);
 

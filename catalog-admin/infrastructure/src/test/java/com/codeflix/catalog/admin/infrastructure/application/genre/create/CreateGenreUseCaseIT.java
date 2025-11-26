@@ -129,7 +129,7 @@ public class CreateGenreUseCaseIT {
     }
 
     @Test
-    public void givenAInvalidEmptyName_whenCallsCreateGenre_shouldReturnDomainException() {
+    public void givenAnInvalidEmptyName_whenCallsCreateGenre_shouldReturnDomainException() {
         // given
         final var expectedName = " ";
         final var expectedIsActive = true;
@@ -156,7 +156,7 @@ public class CreateGenreUseCaseIT {
     }
 
     @Test
-    public void givenAInvalidNullName_whenCallsCreateGenre_shouldReturnDomainException() {
+    public void givenAnInvalidNullName_whenCallsCreateGenre_shouldReturnDomainException() {
         // given
         final String expectedName = null;
         final var expectedIsActive = true;
@@ -183,7 +183,7 @@ public class CreateGenreUseCaseIT {
     }
 
     @Test
-    public void givenAInvalidName_whenCallsCreateGenreAndSomeCategoriesDoesNotExists_shouldReturnDomainException() {
+    public void givenAnInvalidName_whenCallsCreateGenreAndSomeCategoriesDoesNotExists_shouldReturnDomainException() {
         // given
         final var series =
                 categoryGateway.create(Category.newCategory("Séries", null, true));

@@ -39,7 +39,7 @@ public class DeleteCategoryUseCaseTest extends UseCaseTest {
     }
 
     @Test
-    public void givenAInvalidId_whenCallsDeleteCategory_thenShouldBeOK() {
+    public void givenAnInvalidId_whenCallsDeleteCategory_thenShouldBeOK() {
         final var expectedId = CategoryID.from("123");
 
         Mockito.doNothing()

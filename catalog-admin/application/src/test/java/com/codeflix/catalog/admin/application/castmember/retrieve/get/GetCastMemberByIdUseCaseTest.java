@@ -57,7 +57,7 @@ public class GetCastMemberByIdUseCaseTest extends UseCaseTest {
     }
 
     @Test
-    public void givenAInvalidId_whenCallsGetCastMemberAndDoesNotExists_shouldReturnNotFoundException() {
+    public void givenAnInvalidId_whenCallsGetCastMemberAndDoesNotExists_shouldReturnNotFoundException() {
         // given
         final var expectedId = CastMemberID.from("123");
 

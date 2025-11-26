@@ -57,7 +57,7 @@ public class CreateCastMemberUseCaseTest extends UseCaseTest {
     }
 
     @Test
-    public void givenAInvalidName_whenCallsCreateCastMember_shouldThrowsNotificationException() {
+    public void givenAnInvalidName_whenCallsCreateCastMember_shouldThrowsNotificationException() {
         // given
         final String expectedName = null;
         final var expectedType = Fixture.CastMembers.type();
@@ -81,7 +81,7 @@ public class CreateCastMemberUseCaseTest extends UseCaseTest {
     }
 
     @Test
-    public void givenAInvalidType_whenCallsCreateCastMember_shouldThrowsNotificationException() {
+    public void givenAnInvalidType_whenCallsCreateCastMember_shouldThrowsNotificationException() {
         // given
         final var expectedName = Fixture.name();
         final CastMemberType expectedType = null;

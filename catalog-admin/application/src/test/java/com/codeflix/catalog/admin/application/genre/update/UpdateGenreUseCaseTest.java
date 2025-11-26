@@ -171,7 +171,7 @@ public class UpdateGenreUseCaseTest extends UseCaseTest {
     }
 
     @Test
-    public void givenAInvalidName_whenCallsUpdateGenre_thenShouldReturnNotificationException() {
+    public void givenAnInvalidName_whenCallsUpdateGenre_thenShouldReturnNotificationException() {
         // given
         final var aGenre = Genre.newGenre("filme", true);
         final var expectedId = aGenre.getId();
@@ -206,7 +206,7 @@ public class UpdateGenreUseCaseTest extends UseCaseTest {
     }
 
     @Test
-    public void givenAInvalidName_whenCallsUpdateGenreAndSomeCategoriesDoesNotExists_thenShouldReturnNotificationException() {
+    public void givenAnInvalidName_whenCallsUpdateGenreAndSomeCategoriesDoesNotExists_thenShouldReturnNotificationException() {
         // given
         final var aGenre = Genre.newGenre("filme", true);
         final var expectedId = aGenre.getId();

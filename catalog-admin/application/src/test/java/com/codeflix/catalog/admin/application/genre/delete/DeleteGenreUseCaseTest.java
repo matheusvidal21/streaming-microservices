@@ -44,7 +44,7 @@ public class DeleteGenreUseCaseTest extends UseCaseTest {
     }
 
     @Test
-    public void givenAInvalidGenreId_whenCallsDeleteGenre_thenShouldBeOk() {
+    public void givenAnInvalidGenreId_whenCallsDeleteGenre_thenShouldBeOk() {
         // given
         final var expectedId = GenreID.from("123");
 

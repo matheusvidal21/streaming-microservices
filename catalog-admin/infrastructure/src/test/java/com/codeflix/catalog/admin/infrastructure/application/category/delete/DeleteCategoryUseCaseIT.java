@@ -41,7 +41,7 @@ public class DeleteCategoryUseCaseIT {
     }
 
     @Test
-    public void givenAInvalidId_whenCallsDeleteCategory_thenShouldBeOK() {
+    public void givenAnInvalidId_whenCallsDeleteCategory_thenShouldBeOK() {
         final var expectedId = CategoryID.from("123");
 
         Assertions.assertEquals(0, categoryRepository.count());

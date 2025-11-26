@@ -71,7 +71,7 @@ public class UpdateCategoryUseCaseTest extends UseCaseTest {
     }
 
     @Test
-    public void givenAInvalidName_whenCallsUpdateCategory_thenShouldReturnDomainException() {
+    public void givenAnInvalidName_whenCallsUpdateCategory_thenShouldReturnDomainException() {
         final var aCategory = Category.newCategory("Film", null, true);
 
         final var expectedId = aCategory.getId();

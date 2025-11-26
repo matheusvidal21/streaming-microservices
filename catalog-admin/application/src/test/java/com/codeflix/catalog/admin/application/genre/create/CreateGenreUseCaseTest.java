@@ -147,7 +147,7 @@ public class CreateGenreUseCaseTest extends UseCaseTest {
     }
 
     @Test
-    public void givenAInvalidEmptyName_whenCallsCreateGenre_thenShouldReturnDomainException() {
+    public void givenAnInvalidEmptyName_whenCallsCreateGenre_thenShouldReturnDomainException() {
         // given
         final var expectedName = " ";
         final var expectedIsActive = true;
@@ -178,7 +178,7 @@ public class CreateGenreUseCaseTest extends UseCaseTest {
     }
 
     @Test
-    public void givenAInvalidNullName_whenCallsCreateGenre_thenShouldReturnDomainException() {
+    public void givenAnInvalidNullName_whenCallsCreateGenre_thenShouldReturnDomainException() {
         // given
         final String expectedName = null;
         final var expectedIsActive = true;
@@ -248,7 +248,7 @@ public class CreateGenreUseCaseTest extends UseCaseTest {
     }
 
     @Test
-    public void givenAInvalidName_whenCallsCreateGenreAndSomeCategoriesDoesNotExists_thenShouldReturnDomainException() {
+    public void givenAnInvalidName_whenCallsCreateGenreAndSomeCategoriesDoesNotExists_thenShouldReturnDomainException() {
         // given
         final var filmes = CategoryID.from("123");
         final var series = CategoryID.from("456");

@@ -328,7 +328,7 @@ public class GenreTest {
     }
 
     @Test
-    public void givenAInvalidNullAsCategoryID_whenCallAddCategory_thenShouldReceiveOk() throws InterruptedException {
+    public void givenAnInvalidNullAsCategoryID_whenCallAddCategory_thenShouldReceiveOk() throws InterruptedException {
         final var expectedName = "Ação";
         final var expectedIsActive = true;
         final var expectedCategories = new ArrayList<CategoryID>();
@@ -354,7 +354,7 @@ public class GenreTest {
     }
 
     @Test
-    public void givenAInvalidNullAsCategoryID_whenCallRemoveCategory_thenShouldReceiveOk() throws InterruptedException {
+    public void givenAnInvalidNullAsCategoryID_whenCallRemoveCategory_thenShouldReceiveOk() throws InterruptedException {
         final var seriesId = CategoryID.from("123");
         final var moviesId = CategoryID.from("456");
 
