@@ -19,7 +19,7 @@ public class CategoryRepositoryTest {
     @Test
     public void givenAnInvalidNullName_whenCallsSave_thenShouldReturnException() {
         final var expectedExceptionMessage = "NULL not allowed for column \"NAME\"; SQL statement:\n" +
-                "insert into category (active,created_at,deleted_at,description,name,updated_at,id) values (?,?,?,?,?,?,?) [23502-232]";
+                "insert into categories (active,created_at,deleted_at,description,name,updated_at,id) values (?,?,?,?,?,?,?) [23502-232]";
         final var aCategory = Category.newCategory("Filmes", "A categoria mais assistida", true);
 
         final var anEntity = CategoryJpaEntity.from(aCategory);
@@ -35,7 +35,7 @@ public class CategoryRepositoryTest {
     @Test
     public void givenAnInvalidNullCreatedAt_whenCallsSave_thenShouldReturnException() {
         final var expectedExceptionMessage = "NULL not allowed for column \"CREATED_AT\"; SQL statement:\n" +
-                "insert into category (active,created_at,deleted_at,description,name,updated_at,id) values (?,?,?,?,?,?,?) [23502-232]";
+                "insert into categories (active,created_at,deleted_at,description,name,updated_at,id) values (?,?,?,?,?,?,?) [23502-232]";
 
         final var aCategory = Category.newCategory("Filmes", "A categoria mais assistida", true);
 
@@ -52,7 +52,7 @@ public class CategoryRepositoryTest {
     @Test
     public void givenAnInvalidNullUpdatedAt_whenCallsSave_thenShouldReturnException() {
         final var expectedExceptionMessage = "NULL not allowed for column \"UPDATED_AT\"; SQL statement:\n" +
-                "insert into category (active,created_at,deleted_at,description,name,updated_at,id) values (?,?,?,?,?,?,?) [23502-232]";
+                "insert into categories (active,created_at,deleted_at,description,name,updated_at,id) values (?,?,?,?,?,?,?) [23502-232]";
 
         final var aCategory = Category.newCategory("Filmes", "A categoria mais assistida", true);
 
