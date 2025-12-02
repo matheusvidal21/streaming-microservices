@@ -1,13 +1,11 @@
 package com.codeflix.catalog.admin.infrastructure.castmember.models;
 
-import com.codeflix.catalog.admin.domain.castmember.CastMemberType;
-
-import java.time.Instant;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public record CastMemberListResponse(
-        String id,
-        String name,
-        CastMemberType type,
-        Instant createdAt
+        @JsonProperty("id") String id,
+        @JsonProperty("name") String name,
+        @JsonProperty("type") String type,
+        @JsonProperty("created_at") String createdAt
 ) {
 }

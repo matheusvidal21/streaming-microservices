@@ -2,17 +2,17 @@ package com.codeflix.catalog.admin.infrastructure.infrastructure.castmember.mode
 
 import com.codeflix.catalog.admin.infrastructure.Fixture;
 import com.codeflix.catalog.admin.infrastructure.JacksonTest;
-import com.codeflix.catalog.admin.infrastructure.castmember.models.UpdateCastMemberRequest;
+import com.codeflix.catalog.admin.infrastructure.castmember.models.CreateCastMemberRequest;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.json.JacksonTester;
 
 @JacksonTest
-public class UpdateCastMemberRequestTest {
+public class CreateCastMemberRequestTest {
 
     @Autowired
-    private JacksonTester<UpdateCastMemberRequest> json;
+    private JacksonTester<CreateCastMemberRequest> json;
 
     @Test
     public void testUnmarshall() throws Exception {
