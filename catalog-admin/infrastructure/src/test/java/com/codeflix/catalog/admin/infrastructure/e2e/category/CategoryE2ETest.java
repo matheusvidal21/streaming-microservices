@@ -36,7 +36,7 @@ public class CategoryE2ETest implements MockDsl {
     private static final MySQLContainer<?> MYSQL_CONTAINER = new MySQLContainer("mysql:8.0.32")
             .withUsername("root")
             .withPassword("123456")
-            .withDatabaseName("adm_videoscatalog_admin_db");
+            .withDatabaseName("adm_videos");
 
     @DynamicPropertySource
     public static void setDatasourceProperties(final DynamicPropertyRegistry registry) {

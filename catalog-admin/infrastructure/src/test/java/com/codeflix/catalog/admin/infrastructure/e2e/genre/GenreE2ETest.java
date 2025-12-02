@@ -37,8 +37,8 @@ public class GenreE2ETest implements MockDsl {
 
     @Container
     private static final MySQLContainer MYSQL_CONTAINER = new MySQLContainer("mysql:8.0.33")
-            .withPassword("123456")
             .withUsername("root")
+            .withPassword("123456")
             .withDatabaseName("adm_videos");
 
     @DynamicPropertySource
