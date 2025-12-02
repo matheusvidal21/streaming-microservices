@@ -1,31 +1,28 @@
 package com.codeflix.catalog.admin.infrastructure.castmember.presenters;
 
-import com.codeflix.catalog.admin.application.genre.retrivie.get.GenreOutput;
-import com.codeflix.catalog.admin.application.genre.retrivie.list.GenreListOutput;
-import com.codeflix.catalog.admin.infrastructure.genre.models.GenreListResponse;
-import com.codeflix.catalog.admin.infrastructure.genre.models.GenreResponse;
+import com.codeflix.catalog.admin.application.castmember.retrivie.get.CastMemberOutput;
+import com.codeflix.catalog.admin.application.castmember.retrivie.list.CastMemberListOutput;
+import com.codeflix.catalog.admin.infrastructure.castmember.models.CastMemberListResponse;
+import com.codeflix.catalog.admin.infrastructure.castmember.models.CastMemberResponse;
 
 public interface CastMemberApiPresenter {
 
-    static GenreResponse present(final GenreOutput output) {
-        return new GenreResponse(
-                output.id(),
-                output.name(),
-                output.categories(),
-                output.active(),
-                output.createdAt(),
-                output.updatedAt(),
-                output.deletedAt()
+    static CastMemberResponse present(final CastMemberOutput aMember) {
+        return new CastMemberResponse(
+                aMember.id(),
+                aMember.name(),
+                aMember.type().name(),
+                aMember.createdAt().toString(),
+                aMember.updatedAt().toString()
         );
     }
 
-    static GenreListResponse present(final GenreListOutput output) {
-        return new GenreListResponse(
-                output.id(),
-                output.name(),
-                output.active(),
-                output.createdAt(),
-                output.deletedAt()
+    static CastMemberListResponse present(final CastMemberListOutput aMember) {
+        return new CastMemberListResponse(
+                aMember.id(),
+                aMember.name(),
+                aMember.type().name(),
+                aMember.createdAt().toString()
         );
     }
 
