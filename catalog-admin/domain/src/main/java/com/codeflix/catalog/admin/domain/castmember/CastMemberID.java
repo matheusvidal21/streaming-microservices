@@ -19,11 +19,11 @@ public class CastMemberID extends Identifier {
     }
 
     public static CastMemberID from(final String anId) {
-        return new CastMemberID(anId);
+        return new CastMemberID(anId.toLowerCase());
     }
 
     public static CastMemberID from(final UUID anId) {
-        return new CastMemberID(anId.toString().toLowerCase());
+        return CastMemberID.from(anId.toString());
     }
 
     @Override

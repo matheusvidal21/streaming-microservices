@@ -1,8 +1,7 @@
-package com.codeflix.catalog.admin.domain.category.genre;
+package com.codeflix.catalog.admin.domain.genre;
 
 import com.codeflix.catalog.admin.domain.category.CategoryID;
 import com.codeflix.catalog.admin.domain.exceptions.NotificationException;
-import com.codeflix.catalog.admin.domain.genre.Genre;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

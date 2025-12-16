@@ -2,7 +2,6 @@ package com.codeflix.catalog.admin.application.genre.update;
 
 import com.codeflix.catalog.admin.domain.category.CategoryGateway;
 import com.codeflix.catalog.admin.domain.category.CategoryID;
-import com.codeflix.catalog.admin.domain.exceptions.DomainException;
 import com.codeflix.catalog.admin.domain.exceptions.NotFoundException;
 import com.codeflix.catalog.admin.domain.exceptions.NotificationException;
 import com.codeflix.catalog.admin.domain.genre.Genre;

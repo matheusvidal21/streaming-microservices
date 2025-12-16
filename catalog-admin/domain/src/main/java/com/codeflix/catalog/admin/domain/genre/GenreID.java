@@ -19,11 +19,11 @@ public class GenreID extends Identifier {
     }
 
     public static GenreID from(final String anId) {
-        return new GenreID(anId);
+        return new GenreID(anId.toLowerCase());
     }
 
     public static GenreID from(final UUID anId) {
-        return new GenreID(anId.toString().toLowerCase());
+        return GenreID.from(anId.toString());
     }
 
     @Override

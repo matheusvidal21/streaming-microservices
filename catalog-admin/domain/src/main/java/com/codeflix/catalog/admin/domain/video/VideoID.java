@@ -1,29 +1,29 @@
-package com.codeflix.catalog.admin.domain.category;
+package com.codeflix.catalog.admin.domain.video;
 
 import com.codeflix.catalog.admin.domain.base.Identifier;
 
 import java.util.Objects;
 import java.util.UUID;
 
-public class CategoryID extends Identifier {
+public class VideoID extends Identifier {
 
     private final String value;
 
-    private CategoryID(final String value) {
-        Objects.requireNonNull(value, "Category ID must not be null");
+    private VideoID(final String value) {
+        Objects.requireNonNull(value, "Video ID must not be null");
         this.value = value;
     }
 
-    public static CategoryID unique() {
-        return CategoryID.from(UUID.randomUUID());
+    public static VideoID unique() {
+        return VideoID.from(UUID.randomUUID());
     }
 
-    public static CategoryID from(final String anId) {
-        return new CategoryID(anId.toLowerCase());
+    public static VideoID from(final String anId) {
+        return new VideoID(anId.toLowerCase());
     }
 
-    public static CategoryID from(final UUID anId) {
-        return CategoryID.from(anId.toString());
+    public static VideoID from(final UUID anId) {
+        return VideoID.from(anId.toString());
     }
 
     @Override
@@ -35,7 +35,7 @@ public class CategoryID extends Identifier {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        final CategoryID that = (CategoryID) o;
+        final VideoID that = (VideoID) o;
         return Objects.equals(getValue(), that.getValue());
     }
 
