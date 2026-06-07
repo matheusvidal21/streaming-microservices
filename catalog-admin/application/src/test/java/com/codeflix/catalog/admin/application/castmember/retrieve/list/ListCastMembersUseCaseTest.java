@@ -1,6 +1,6 @@
 package com.codeflix.catalog.admin.application.castmember.retrieve.list;
 
-import com.codeflix.catalog.admin.application.Fixture;
+import com.codeflix.catalog.admin.domain.Fixture;
 import com.codeflix.catalog.admin.application.UseCaseTest;
 import com.codeflix.catalog.admin.application.castmember.retrivie.list.CastMemberListOutput;
 import com.codeflix.catalog.admin.application.castmember.retrivie.list.DefaultListCastMembersUseCase;
