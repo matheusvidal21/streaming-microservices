@@ -1,9 +1,9 @@
 package com.codeflix.catalog.admin.domain.category;
 
 import com.codeflix.catalog.admin.domain.base.Identifier;
+import com.codeflix.catalog.admin.domain.utils.IdUtils;
 
 import java.util.Objects;
-import java.util.UUID;
 
 public class CategoryID extends Identifier {
 
@@ -15,15 +15,11 @@ public class CategoryID extends Identifier {
     }
 
     public static CategoryID unique() {
-        return CategoryID.from(UUID.randomUUID());
+        return CategoryID.from(IdUtils.uuid());
     }
 
     public static CategoryID from(final String anId) {
         return new CategoryID(anId.toLowerCase());
-    }
-
-    public static CategoryID from(final UUID anId) {
-        return CategoryID.from(anId.toString());
     }
 
     @Override

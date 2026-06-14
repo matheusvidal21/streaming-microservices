@@ -23,6 +23,10 @@ public class ImageMedia extends ValueObject {
         return new ImageMedia(IdUtils.uuid(), checksum, name, location);
     }
 
+    public static ImageMedia with(final String id, final String checksum, final String name, final String location) {
+        return new ImageMedia(id, checksum, name, location);
+    }
+
     public String id() {
         return id;
     }
@@ -38,7 +42,6 @@ public class ImageMedia extends ValueObject {
     public String location() {
         return location;
     }
-
 
     @Override
     public boolean equals(Object o) {
