@@ -23,7 +23,7 @@ public class GCStorageService implements StorageService {
     }
 
     @Override
-    public Optional<Resource> get(String name) {
+    public Optional<Resource> get(final String name) {
         return Optional.ofNullable(this.storage.get(this.bucket, name))
                 .map(blob -> Resource.with(
                         blob.getContent(),
@@ -34,7 +34,7 @@ public class GCStorageService implements StorageService {
     }
 
     @Override
-    public void store(String name, Resource resource) {
+    public void store(final String name, final Resource resource) {
         final var blobInfo = BlobInfo.newBuilder(this.bucket, name)
                 .setContentType(resource.contentType())
                 .setCrc32cFromHexString(resource.checksum())
@@ -44,7 +44,7 @@ public class GCStorageService implements StorageService {
     }
 
     @Override
-    public void deleteAll(Collection<String> names) {
+    public void deleteAll(final Collection<String> names) {
         final var blobs = names.stream()
                 .map(name -> BlobId.of(this.bucket, name))
                 .toList();
@@ -52,7 +52,7 @@ public class GCStorageService implements StorageService {
     }
 
     @Override
-    public List<String> list(String prefix) {
+    public List<String> list(final String prefix) {
         final var blobs = this.storage.list(this.bucket, Storage.BlobListOption.prefix(prefix));
         return StreamSupport.stream(blobs.iterateAll().spliterator(), false)
                 .map(BlobInfo::getName)
