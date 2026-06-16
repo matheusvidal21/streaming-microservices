@@ -1,6 +1,6 @@
 package com.codeflix.catalog.admin.application.video.media.get;
 
-import com.codeflix.catalog.admin.domain.video.Resource;
+import com.codeflix.catalog.admin.domain.resource.Resource;
 
 public record MediaOutput(
         byte[] content,

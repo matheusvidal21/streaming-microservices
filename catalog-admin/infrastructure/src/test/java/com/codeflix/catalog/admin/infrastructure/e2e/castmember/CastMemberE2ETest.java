@@ -1,9 +1,9 @@
 package com.codeflix.catalog.admin.infrastructure.e2e.castmember;
 
+import com.codeflix.catalog.admin.domain.Fixture;
 import com.codeflix.catalog.admin.domain.castmember.CastMemberID;
 import com.codeflix.catalog.admin.domain.castmember.CastMemberType;
 import com.codeflix.catalog.admin.infrastructure.E2ETest;
-import com.codeflix.catalog.admin.infrastructure.Fixture;
 import com.codeflix.catalog.admin.infrastructure.castmember.persistence.CastMemberRepository;
 import com.codeflix.catalog.admin.infrastructure.e2e.MockDsl;
 import org.junit.jupiter.api.Assertions;

@@ -1,6 +1,6 @@
 package com.codeflix.catalog.admin.infrastructure.infrastructure.castmember.models;
 
-import com.codeflix.catalog.admin.infrastructure.Fixture;
+import com.codeflix.catalog.admin.domain.Fixture;
 import com.codeflix.catalog.admin.infrastructure.JacksonTest;
 import com.codeflix.catalog.admin.infrastructure.castmember.models.UpdateCastMemberRequest;
 import org.assertj.core.api.Assertions;

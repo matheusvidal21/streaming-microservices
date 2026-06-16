@@ -16,7 +16,7 @@ import com.codeflix.catalog.admin.domain.exceptions.NotFoundException;
 import com.codeflix.catalog.admin.domain.exceptions.NotificationException;
 import com.codeflix.catalog.admin.domain.pagination.Pagination;
 import com.codeflix.catalog.admin.infrastructure.ControllerTest;
-import com.codeflix.catalog.admin.infrastructure.Fixture;
+import com.codeflix.catalog.admin.domain.Fixture;
 import com.codeflix.catalog.admin.infrastructure.api.CastMemberApi;
 import com.codeflix.catalog.admin.infrastructure.castmember.models.CreateCastMemberRequest;
 import com.codeflix.catalog.admin.infrastructure.castmember.models.UpdateCastMemberRequest;

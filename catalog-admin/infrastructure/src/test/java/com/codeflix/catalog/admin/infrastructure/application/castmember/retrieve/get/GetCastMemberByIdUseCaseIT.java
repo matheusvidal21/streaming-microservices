@@ -1,11 +1,11 @@
 package com.codeflix.catalog.admin.infrastructure.application.castmember.retrieve.get;
 
 import com.codeflix.catalog.admin.application.castmember.retrivie.get.GetCastMemberByIdUseCase;
+import com.codeflix.catalog.admin.domain.Fixture;
 import com.codeflix.catalog.admin.domain.castmember.CastMember;
 import com.codeflix.catalog.admin.domain.castmember.CastMemberGateway;
 import com.codeflix.catalog.admin.domain.castmember.CastMemberID;
 import com.codeflix.catalog.admin.domain.exceptions.NotFoundException;
-import com.codeflix.catalog.admin.infrastructure.Fixture;
 import com.codeflix.catalog.admin.infrastructure.IntegrationTest;
 import com.codeflix.catalog.admin.infrastructure.castmember.persistence.CastMemberJpaEntity;
 import com.codeflix.catalog.admin.infrastructure.castmember.persistence.CastMemberRepository;

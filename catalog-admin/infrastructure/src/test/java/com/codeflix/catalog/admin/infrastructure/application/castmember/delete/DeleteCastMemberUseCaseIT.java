@@ -1,10 +1,10 @@
 package com.codeflix.catalog.admin.infrastructure.application.castmember.delete;
 
 import com.codeflix.catalog.admin.application.castmember.delete.DeleteCastMemberUseCase;
+import com.codeflix.catalog.admin.domain.Fixture;
 import com.codeflix.catalog.admin.domain.castmember.CastMember;
 import com.codeflix.catalog.admin.domain.castmember.CastMemberGateway;
 import com.codeflix.catalog.admin.domain.castmember.CastMemberID;
-import com.codeflix.catalog.admin.infrastructure.Fixture;
 import com.codeflix.catalog.admin.infrastructure.IntegrationTest;
 import com.codeflix.catalog.admin.infrastructure.castmember.persistence.CastMemberJpaEntity;
 import com.codeflix.catalog.admin.infrastructure.castmember.persistence.CastMemberRepository;

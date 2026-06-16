@@ -3,6 +3,7 @@ package com.codeflix.catalog.admin.infrastructure.video.persistence;
 import com.codeflix.catalog.admin.domain.castmember.CastMemberID;
 import com.codeflix.catalog.admin.domain.category.CategoryID;
 import com.codeflix.catalog.admin.domain.genre.GenreID;
+import com.codeflix.catalog.admin.domain.utils.CollectionUtils;
 import com.codeflix.catalog.admin.domain.video.Rating;
 import com.codeflix.catalog.admin.domain.video.Video;
 import com.codeflix.catalog.admin.domain.video.VideoID;
@@ -38,7 +39,6 @@ public class VideoJpaEntity {
     private boolean published;
 
     @Column(name = "rating")
-    @Enumerated(EnumType.STRING)
     private Rating rating;
 
     @Column(name = "duration", precision = 2)
@@ -153,6 +153,9 @@ public class VideoJpaEntity {
 
         aVideo.getGenres()
                 .forEach(entity::addGenre);
+
+        aVideo.getMembers()
+                .forEach(entity::addMember);
 
         return entity;
     }
@@ -356,6 +359,18 @@ public class VideoJpaEntity {
 
     public void setMembers(Set<VideoCastMemberJpaEntity> members) {
         this.members = members;
+    }
+
+    public Set<CategoryID> getCategoriesID() {
+        return CollectionUtils.mapTo(getCategories(), it -> CategoryID.from(it.getId().getCategoryId()));
+    }
+
+    public Set<GenreID> getGenresID() {
+        return CollectionUtils.mapTo(getGenres(), it -> GenreID.from(it.getId().getGenreId()));
+    }
+
+    public Set<CastMemberID> getMembersID() {
+        return CollectionUtils.mapTo(getMembers(), it -> CastMemberID.from(it.getId().getCastMemberId()));
     }
 
 }

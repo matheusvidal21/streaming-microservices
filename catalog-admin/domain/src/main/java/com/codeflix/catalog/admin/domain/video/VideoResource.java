@@ -1,5 +1,7 @@
 package com.codeflix.catalog.admin.domain.video;
 
+import com.codeflix.catalog.admin.domain.resource.Resource;
+
 public record VideoResource(
         VideoMediaType type,
         Resource resource

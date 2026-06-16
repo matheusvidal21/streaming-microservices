@@ -4,6 +4,7 @@ import com.codeflix.catalog.admin.domain.castmember.CastMember;
 import com.codeflix.catalog.admin.domain.castmember.CastMemberType;
 import com.codeflix.catalog.admin.domain.category.Category;
 import com.codeflix.catalog.admin.domain.genre.Genre;
+import com.codeflix.catalog.admin.domain.resource.Resource;
 import com.codeflix.catalog.admin.domain.utils.IdUtils;
 import com.codeflix.catalog.admin.domain.video.*;
 import com.github.javafaker.Faker;

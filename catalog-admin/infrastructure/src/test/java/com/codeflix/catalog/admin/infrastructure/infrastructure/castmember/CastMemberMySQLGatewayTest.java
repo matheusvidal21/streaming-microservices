@@ -4,7 +4,7 @@ import com.codeflix.catalog.admin.domain.castmember.CastMember;
 import com.codeflix.catalog.admin.domain.castmember.CastMemberID;
 import com.codeflix.catalog.admin.domain.castmember.CastMemberType;
 import com.codeflix.catalog.admin.domain.pagination.SearchQuery;
-import com.codeflix.catalog.admin.infrastructure.Fixture;
+import com.codeflix.catalog.admin.domain.Fixture;
 import com.codeflix.catalog.admin.infrastructure.MySQLGatewayTest;
 import com.codeflix.catalog.admin.infrastructure.castmember.CastMemberMySQLGateway;
 import com.codeflix.catalog.admin.infrastructure.castmember.persistence.CastMemberJpaEntity;

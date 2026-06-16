@@ -39,6 +39,7 @@ public class AudioVideoMediaJpaEntity {
             final MediaStatus status
     ) {
         this.id = id;
+        this.checksum = checksum;
         this.name = name;
         this.filePath = filePath;
         this.encodedPath = encodedPath;

@@ -5,7 +5,7 @@ import com.codeflix.catalog.admin.application.castmember.retrivie.list.ListCastM
 import com.codeflix.catalog.admin.domain.castmember.CastMember;
 import com.codeflix.catalog.admin.domain.castmember.CastMemberGateway;
 import com.codeflix.catalog.admin.domain.pagination.SearchQuery;
-import com.codeflix.catalog.admin.infrastructure.Fixture;
+import com.codeflix.catalog.admin.domain.Fixture;
 import com.codeflix.catalog.admin.infrastructure.IntegrationTest;
 import com.codeflix.catalog.admin.infrastructure.castmember.persistence.CastMemberJpaEntity;
 import com.codeflix.catalog.admin.infrastructure.castmember.persistence.CastMemberRepository;

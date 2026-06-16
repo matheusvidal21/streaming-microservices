@@ -1,6 +1,7 @@
 package com.codeflix.catalog.admin.domain.video;
 
 import com.codeflix.catalog.admin.domain.base.Identifier;
+import com.codeflix.catalog.admin.domain.utils.IdUtils;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -15,7 +16,7 @@ public class VideoID extends Identifier {
     }
 
     public static VideoID unique() {
-        return VideoID.from(UUID.randomUUID());
+        return VideoID.from(IdUtils.uuid());
     }
 
     public static VideoID from(final String anId) {

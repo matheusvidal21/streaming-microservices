@@ -1,6 +1,8 @@
 package com.codeflix.catalog.admin.domain.video;
 
 
+import com.codeflix.catalog.admin.domain.resource.Resource;
+
 import java.util.Optional;
 
 public interface MediaResourceGateway {

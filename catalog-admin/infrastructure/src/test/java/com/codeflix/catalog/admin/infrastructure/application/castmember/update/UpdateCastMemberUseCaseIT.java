@@ -8,7 +8,7 @@ import com.codeflix.catalog.admin.domain.castmember.CastMemberID;
 import com.codeflix.catalog.admin.domain.castmember.CastMemberType;
 import com.codeflix.catalog.admin.domain.exceptions.NotFoundException;
 import com.codeflix.catalog.admin.domain.exceptions.NotificationException;
-import com.codeflix.catalog.admin.infrastructure.Fixture;
+import com.codeflix.catalog.admin.domain.Fixture;
 import com.codeflix.catalog.admin.infrastructure.IntegrationTest;
 import com.codeflix.catalog.admin.infrastructure.castmember.persistence.CastMemberJpaEntity;
 import com.codeflix.catalog.admin.infrastructure.castmember.persistence.CastMemberRepository;

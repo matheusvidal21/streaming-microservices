@@ -11,6 +11,7 @@ import com.codeflix.catalog.admin.domain.exceptions.NotificationException;
 import com.codeflix.catalog.admin.domain.genre.GenreGateway;
 import com.codeflix.catalog.admin.domain.genre.GenreID;
 import com.codeflix.catalog.admin.domain.Fixture;
+import com.codeflix.catalog.admin.domain.resource.Resource;
 import com.codeflix.catalog.admin.domain.video.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
