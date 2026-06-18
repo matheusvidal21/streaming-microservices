@@ -4,6 +4,7 @@ import com.codeflix.catalog.admin.domain.UnitTest;
 import com.codeflix.catalog.admin.domain.castmember.CastMemberID;
 import com.codeflix.catalog.admin.domain.category.CategoryID;
 import com.codeflix.catalog.admin.domain.genre.GenreID;
+import com.codeflix.catalog.admin.domain.utils.InstantUtils;
 import com.codeflix.catalog.admin.domain.validation.handler.ThrowsValidationHandler;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -67,7 +68,7 @@ public class VideoTest extends UnitTest {
         Assertions.assertTrue(actualVideo.getBanner().isEmpty());
         Assertions.assertTrue(actualVideo.getThumbnail().isEmpty());
         Assertions.assertTrue(actualVideo.getThumbnailHalf().isEmpty());
-        //Assertions.assertTrue(actualVideo.getDomainEvents().isEmpty());
+        Assertions.assertTrue(actualVideo.getDomainEvents().isEmpty());
 
         Assertions.assertDoesNotThrow(() -> actualVideo.validate(new ThrowsValidationHandler()));
     }
@@ -87,7 +88,7 @@ public class VideoTest extends UnitTest {
         final var expectedOpened = false;
         final var expectedPublished = false;
         final var expectedRating = Rating.L;
-        //final var expectedEvent = new VideoMediaCreated("ID", "file");
+        final var expectedEvent = new VideoMediaCreated("ID", "file");
         final var expectedEventCount = 1;
         final var expectedCategories = Set.of(CategoryID.unique());
         final var expectedGenres = Set.of(GenreID.unique());
@@ -106,7 +107,7 @@ public class VideoTest extends UnitTest {
                 Set.of()
         );
 
-        //aVideo.registerEvent(expectedEvent);
+        aVideo.registerEvent(expectedEvent);
 
         // when
         final var actualVideo = aVideo.clone().update(
@@ -143,13 +144,13 @@ public class VideoTest extends UnitTest {
         Assertions.assertTrue(actualVideo.getThumbnail().isEmpty());
         Assertions.assertTrue(actualVideo.getThumbnailHalf().isEmpty());
 
-        //Assertions.assertEquals(expectedEventCount, actualVideo.getDomainEvents().size());
-        //Assertions.assertEquals(expectedEvent, actualVideo.getDomainEvents().get(0));
+        Assertions.assertEquals(expectedEventCount, actualVideo.getDomainEvents().size());
+        Assertions.assertEquals(expectedEvent, actualVideo.getDomainEvents().get(0));
 
         Assertions.assertDoesNotThrow(() -> actualVideo.validate(new ThrowsValidationHandler()));
     }
 
-    /*@Test
+    @Test
     public void givenValidVideo_whenCallsUpdateVideoMedia_shouldReturnUpdated() {
         // given
         final var expectedTitle = "System Design Interviews";
@@ -202,7 +203,7 @@ public class VideoTest extends UnitTest {
         Assertions.assertEquals(expectedRating, actualVideo.getRating());
         Assertions.assertEquals(expectedCategories, actualVideo.getCategories());
         Assertions.assertEquals(expectedGenres, actualVideo.getGenres());
-        Assertions.assertEquals(expectedMembers, actualVideo.getCastMembers());
+        Assertions.assertEquals(expectedMembers, actualVideo.getMembers());
         Assertions.assertEquals(aVideoMedia, actualVideo.getVideo().get());
         Assertions.assertTrue(actualVideo.getTrailer().isEmpty());
         Assertions.assertTrue(actualVideo.getBanner().isEmpty());
@@ -272,7 +273,7 @@ public class VideoTest extends UnitTest {
         Assertions.assertEquals(expectedRating, actualVideo.getRating());
         Assertions.assertEquals(expectedCategories, actualVideo.getCategories());
         Assertions.assertEquals(expectedGenres, actualVideo.getGenres());
-        Assertions.assertEquals(expectedMembers, actualVideo.getCastMembers());
+        Assertions.assertEquals(expectedMembers, actualVideo.getMembers());
         Assertions.assertTrue(actualVideo.getVideo().isEmpty());
         Assertions.assertEquals(aTrailerMedia, actualVideo.getTrailer().get());
         Assertions.assertTrue(actualVideo.getBanner().isEmpty());
@@ -341,7 +342,7 @@ public class VideoTest extends UnitTest {
         Assertions.assertEquals(expectedRating, actualVideo.getRating());
         Assertions.assertEquals(expectedCategories, actualVideo.getCategories());
         Assertions.assertEquals(expectedGenres, actualVideo.getGenres());
-        Assertions.assertEquals(expectedMembers, actualVideo.getCastMembers());
+        Assertions.assertEquals(expectedMembers, actualVideo.getMembers());
         Assertions.assertTrue(actualVideo.getVideo().isEmpty());
         Assertions.assertTrue(actualVideo.getTrailer().isEmpty());
         Assertions.assertEquals(aBannerMedia, actualVideo.getBanner().get());
@@ -403,7 +404,7 @@ public class VideoTest extends UnitTest {
         Assertions.assertEquals(expectedRating, actualVideo.getRating());
         Assertions.assertEquals(expectedCategories, actualVideo.getCategories());
         Assertions.assertEquals(expectedGenres, actualVideo.getGenres());
-        Assertions.assertEquals(expectedMembers, actualVideo.getCastMembers());
+        Assertions.assertEquals(expectedMembers, actualVideo.getMembers());
         Assertions.assertTrue(actualVideo.getVideo().isEmpty());
         Assertions.assertTrue(actualVideo.getTrailer().isEmpty());
         Assertions.assertTrue(actualVideo.getBanner().isEmpty());
@@ -465,7 +466,7 @@ public class VideoTest extends UnitTest {
         Assertions.assertEquals(expectedRating, actualVideo.getRating());
         Assertions.assertEquals(expectedCategories, actualVideo.getCategories());
         Assertions.assertEquals(expectedGenres, actualVideo.getGenres());
-        Assertions.assertEquals(expectedMembers, actualVideo.getCastMembers());
+        Assertions.assertEquals(expectedMembers, actualVideo.getMembers());
         Assertions.assertTrue(actualVideo.getVideo().isEmpty());
         Assertions.assertTrue(actualVideo.getTrailer().isEmpty());
         Assertions.assertTrue(actualVideo.getBanner().isEmpty());
@@ -519,7 +520,5 @@ public class VideoTest extends UnitTest {
         // then
         Assertions.assertNotNull(actualVideo.getDomainEvents());
     }
-
-     */
 
 }

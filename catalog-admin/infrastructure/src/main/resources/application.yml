@@ -37,21 +37,42 @@ spring:
       hibernate:
         generate_statistics: false
     database-platform: org.hibernate.dialect.MySQL8Dialect
+  rabbitmq:
+    host: ${amqp.host}
+    port: ${amqp.port}
+    username: ${amqp.username}
+    password: ${amqp.password}
+    dynamic: ${amqp.admin.auto-create}
 
-google-cloud:
-  credentials: ${GOOGÇE_CLOUD_CREDENTIALS}
-  project-id: ${GOOGLE_CLOUD_PROJECT_ID}
-  storage:
-    catalog-videos:
-      bucket: catalog_videos
-      connect-timeout: 1000
-      read-timeout: 2000
-      retry-delay: 50
-      retry-max-attempts: 2
-      retry-max-delay: 50
-      retry-multiplier: 1.0
+
+google:
+  cloud:
+    credentials: ${GOOGLE_CLOUD_CREDENTIALS}
+    project-id: ${GOOGLE_CLOUD_PROJECT_ID}
+    storage:
+      catalog-videos:
+        bucket: catalog_videos
+        connect-timeout: 1000
+        read-timeout: 2000
+        retry-delay: 50
+        retry-max-attempts: 2
+        retry-max-delay: 50
+        retry-multiplier: 1.0
 
 storage:
   catalog-videos:
     location-pattern: videoId-{videoId}
     filename-pattern: type-{type}
+
+amqp:
+  admin:
+    auto-create: false
+  queues:
+    video-created:
+      exchange: video.events
+      routing-key: video.created
+      queue: video.created.queue
+    video-encoded:
+      exchange: video.events
+      routing-key: video.updated
+      queue: video.updated.queue
